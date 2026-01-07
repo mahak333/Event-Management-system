@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-custom">
+      <div class="header"><h3>Available Events</h3><a href="/" style="text-decoration:none;"><button class="btn-student">Home</button></a></div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:20px;">
+        <div class="card-custom" th:each="e : ${events}" style="background:white; padding:16px; border-radius:12px;">
+          <h4 th:text="${e.title}">Event Title</h4>
+          <p th:text="${e.description}">Short description...</p>
+          <p><strong>Date:</strong> <span th:text="${e.date}">2025-12-01</span></p>
+          <p><strong>Venue:</strong> <span th:text="${e.venue}">Hall</span></p>
+          <p><strong>Registered:</strong> <span th:text="${e.currentCount}">0</span> / <span th:text="${e.maxParticipants}">50</span></p>
+          <div style="margin-top:10px;">
+            <a th:href="@{'/register/' + ${e.id}}"><button class="btn-organizer" style="background:var(--accent)">Register</button></a>
+            <a th:href="@{'/event/' + ${e.id} + '/participants'}"><button class="btn-student" style="margin-left:8px">View</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer"><p>Powered by Spring Boot - Demo</p></div>
+    </div>
+  </body>
+</html>

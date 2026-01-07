@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Participants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-custom">
+      <div class="header"><h3>Participants</h3><a href="/" style="text-decoration:none;"><button class="btn-student">Home</button></a></div>
+      <ul style="margin-top:12px;">
+        <li th:each="p : ${participants}" style="background:white; padding:12px; border-radius:8px; margin-bottom:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05); display:flex; justify-content:space-between;">
+          <span th:text="${p.name}">Name</span>
+          <small th:text="${p.email}">email@example.com</small>
+        </li>
+      </ul>
+      <div class="footer"><p>Participant list</p></div>
+    </div>
+  </body>
+</html>

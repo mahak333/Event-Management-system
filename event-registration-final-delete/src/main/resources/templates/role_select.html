@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Choose Role</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-custom">
+      <div class="header">
+        <h2>Event Registration System</h2>
+        <small>Choose your role to continue</small>
+      </div>
+
+      <div style="display:flex; gap:20px; margin-top:30px; justify-content:center; align-items:center;">
+        <div style="text-align:center;">
+          <form action="/organizer/login" method="get">
+            <button class="btn-organizer" type="submit">Organizer (Post Event)</button>
+          </form>
+          <p style="margin-top:8px; color:var(--accent)">Only organizer can post events</p>
+        </div>
+
+        <div style="text-align:center;">
+          <a href="/events"><button class="btn-student">Student (Register)</button></a>
+          <p style="margin-top:8px; color:var(--accent)">Students can view and register for events</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>YCCE - Dept. of CSE & AIML</p>
+      </div>
+    </div>
+  </body>
+</html>
